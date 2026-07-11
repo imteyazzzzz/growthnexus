@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Growth Nexus Legal Policies — Privacy Policy, Terms of Service, GDPR Compliance, Cookie Policy, and Security.">
+    <title>Legal Policies — Growth Nexus</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B1220',
+                        bg: '#050816',
+                        accent: '#4F46E5',
+                        cyan: '#22D3EE',
+                        text: '#F8FAFC',
+                        success: '#10B981',
+                    },
+                    fontFamily: {
+                        heading: ['Space Grotesk', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        :root {
+            --primary: #0B1220;
+            --bg: #050816;
+            --accent: #4F46E5;
+            --cyan: #22D3EE;
+            --text: #F8FAFC;
+            --glass: rgba(11, 18, 32, 0.65);
+            --glass-border: rgba(79, 70, 229, 0.12);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .glass {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glow-orb {
+            position: absolute; border-radius: 50%;
+            filter: blur(80px); opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: rgba(79, 70, 229, 0.3); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(79, 70, 229, 0.5); }
+        
+        /* Active link indicator */
+        .tab-btn.active {
+            background: rgba(79, 70, 229, 0.15);
+            border-color: var(--cyan);
+            color: var(--cyan);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+    <!-- Glow Orbs -->
+    <div class="glow-orb w-[400px] h-[400px] bg-accent -top-20 -left-20" aria-hidden="true"></div>
+    <div class="glow-orb w-[400px] h-[400px] bg-cyan top-1/2 -right-20" aria-hidden="true"></div>
+    
+    <div>
+        <!-- Header / Nav -->
+        <header class="glass border-b border-white/5 sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <a href="Growth.html#hero" class="flex items-center gap-3 group" aria-label="Growth Nexus Home">
+                        <img src="logo.png" alt="Growth Nexus Logo" class="w-10 h-10 object-contain rounded-xl">
+                        <span class="font-heading font-bold text-lg tracking-tight">Growth Nexus</span>
+                    </a>
+                    <div>
+                        <a href="Growth.html#hero" class="btn-secondary !py-2 !px-5 !text-sm !rounded-lg flex items-center gap-2">
+                            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                            <span>Back to Home</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+            <div class="text-center mb-12">
+                <h1 class="font-heading text-4xl sm:text-5xl font-bold mb-4">Legal <span class="gradient-text">Policies</span></h1>
+                <p class="text-text/50 font-body text-sm sm:text-base max-w-xl mx-auto">Please review our official terms, compliance regulations, and security frameworks.</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Navigation Tabs (Sidebar) -->
+                <div class="lg:col-span-1 flex lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 scroll-smooth shrink-0">
+                    <button onclick="switchTab('privacy')" id="tab-privacy" class="tab-btn flex items-center gap-3 px-5 py-3.5 rounded-xl border border-white/5 hover:border-white/10 hover:bg-white/5 transition-all text-sm font-heading font-medium text-text/70 shrink-0 text-left w-full">
+                        <i data-lucide="shield" class="w-4 h-4"></i>
+                        <span>Privacy Policy</span>
+                    </button>
+                    <button onclick="switchTab('terms')" id="tab-terms" class="tab-btn flex items-center gap-3 px-5 py-3.5 rounded-xl border border-white/5 hover:border-white/10 hover:bg-white/5 transition-all text-sm font-heading font-medium text-text/70 shrink-0 text-left w-full">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        <span>Terms of Service</span>
+                    </button>
+                    <button onclick="switchTab('cookies')" id="tab-cookies" class="tab-btn flex items-center gap-3 px-5 py-3.5 rounded-xl border border-white/5 hover:border-white/10 hover:bg-white/5 transition-all text-sm font-heading font-medium text-text/70 shrink-0 text-left w-full">
+                        <i data-lucide="cookie" class="w-4 h-4"></i>
+                        <span>Cookie Policy</span>
+                    </button>
+                    <button onclick="switchTab('gdpr')" id="tab-gdpr" class="tab-btn flex items-center gap-3 px-5 py-3.5 rounded-xl border border-white/5 hover:border-white/10 hover:bg-white/5 transition-all text-sm font-heading font-medium text-text/70 shrink-0 text-left w-full">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                        <span>GDPR Compliance</span>
+                    </button>
+                    <button onclick="switchTab('security')" id="tab-security" class="tab-btn flex items-center gap-3 px-5 py-3.5 rounded-xl border border-white/5 hover:border-white/10 hover:bg-white/5 transition-all text-sm font-heading font-medium text-text/70 shrink-0 text-left w-full">
+                        <i data-lucide="key" class="w-4 h-4"></i>
+                        <span>Security</span>
+                    </button>
+                </div>
+                
+                <!-- Content Pane -->
+                <div class="lg:col-span-3">
+                    <div class="glass rounded-3xl p-6 sm:p-10 border border-white/5 font-body leading-relaxed text-sm sm:text-base text-text/80">
+                        
+                        <!-- Privacy Policy Pane -->
+                        <div id="content-privacy" class="policy-pane space-y-6 hidden">
+                            <h2 class="font-heading text-2xl sm:text-3xl font-bold text-text mb-4">Privacy Policy</h2>
+                            <p class="text-xs text-text/40">Last Updated: July 4, 2026</p>
+                            <p>At Growth Nexus, we are committed to protecting your privacy. This Privacy Policy details how we collect, use, and safe-keep your personal and business details when you interact with our website and AI services.</p>
+                            
+                            <h3 class="font-heading text-lg font-semibold text-text mt-6">1. Information We Collect</h3>
+                            <p>We may collect information that you voluntarily provide to us when booking a demo, filling out a contact form, or subscribing to our newsletters. This includes:</p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>Name, Company Name, and Industry Sector.</li>
+                                <li>Contact information (Email Address and Phone Number).</li>
+                                <li>Information regarding your business processes and automation requirements.</li>
+                            </ul>
+                            
+                            <h3 class="font-heading text-lg font-semibold text-text mt-6">2. How We Use Your Information</h3>
+                            <p>We process your data to deliver automated solutions, schedule consultation sessions, improve our site usability, and send system updates. Specifically, your details are:</p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>Logged locally in your browser's session and stored on our Google Sheets integrations.</li>
+                                <li>Used to trigger automated email/SMS follow-up campaigns regarding your booked demo.</li>
+                                <li>Used to auto-generate task items in our team tasks database (Google Tasks) for manual review.</li>
+                            </ul>
+                            
+                            <h3 class="font-heading text-lg font-semibold text-text mt-6">3. Data Sharing & Third-Party Services</h3>
+                            <p>Growth Nexus does not sell, rent, or trade your data to third-party marketing companies. Data is shared with trust-verified cloud service integrations (such as Google APIs) strictly to facilitate operations. All databases are protected via advanced OAuth credentials.</p>
+                        </div>
+                        
+                        <!-- Terms of Service Pane -->
+                        <div id="content-terms" class="policy-pane space-y-6 hidden">
+                            <h2 class="font-heading text-2xl sm:text-3xl font-bold text-text mb-4">Terms of Service</h2>
+                            <p class="text-xs text-text/40">Last Updated: July 4, 2026</p>
+                            <p>Welcome to Growth Nexus. By browsing our website, booking our custom AI demos, or subscribing to our service tiers, you agree to comply with and be bound by the following Terms of Service.</p>
+                            
+                            <h3 class="font-heading text-lg font-semibold text-text mt-6">1. Services Rendered</h3>
+                            <p>Growth Nexus builds customized AI workflow systems, automation scripts, and support chatbots. All systems are deployed to cloud infrastructure owned or leased by either the client or Growth Nexus, as defined in specific service-level agreements (SLAs).</p>
+                            
+                            <h3 class="font-heading text-lg font-semibold text-text mt-6">2. Client Cooperation & Data Accuracy</h3>
+                            <p>Clients must provide accurate data for custom blueprints and Discovery calls. We rely on information provided by the client to configure Google Sheet connections, email servers, and Google Task synchronizations. Any disruptions caused by faulty credentials or incorrect inputs are not the liability of Growth Nexus.</p>
+                            
+                            <h3 class="font-heading text-lg font-semibold text-text mt-6">3. Payments, Tiers, & Cancellations</h3>
+                            <p>Service tiers (Starter, Growth, Enterprise) are billed on a month-to-month subscription basis. Payments are processed in advance. Subscriptions may be cancelled at any time by giving a 30-day prior notice. Custom engineering deposits are non-refundable after system staging begins.</p>
+                        </div>
+                        
+                        <!-- Cookie Policy Pane -->
+                        <div id="content-cookies" class="policy-pane space-y-6 hidden">
+                            <h2 class="font-heading text-2xl sm:text-3xl font-bold text-text mb-4">Cookie Policy</h2>
+                            <p class="text-xs text-text/40">Last Updated: July 4, 2026</p>
+                            <p>This Cookie Policy explains how Growth Nexus uses cookies and local browser storage to optimize site loading, memorize user consent, and enable administrative dashboards.</p>
+                            
+                            <h3 class="font-heading text-lg font-semibold text-text mt-6">1. What are Cookies and Local Storage?</h3>
+                            <p>Cookies are tiny files stored on your computer by the browser. Local Storage and Session Storage are modern browser features that allow websites to save small text keys on your device. These keys persist until cleared manually or expired automatically.</p>
+                            
+                            <h3 class="font-heading text-lg font-semibold text-text mt-6">2. Cookies and Storage Used on Our Site</h3>
+                            <ul class="list-disc pl-5 space-y-4">
+                                <li>
+                                    <strong>gn_cookies (Cookie Consent):</strong> 
+                                    Stores your choice (accepted/declined) when you interact with our Cookie Banner, preventing the banner from popping up again.
+                                </li>
+                                <li>
+                                    <strong>gn_exit_dismissed (Exit Intent):</strong> 
+                                    Tracks if you dismissed the special audit offer popup so that we do not disrupt your browsing session again.
+                                </li>
+                                <li>
+                                    <strong>gn_leads (Local Leads Cache):</strong> 
+                                    Saves a temporary backup of leads submitted from your device. This serves as local history and is used to feed the Leads Dashboard.
+                                </li>
+                                <li>
+                                    <strong>gn_admin_authenticated (Admin Mode):</strong> 
+                                    Stored in Session Storage. It remembers if you have authenticated with the correct admin password, keeping the dashboard unlocked across tab refreshes during your session.
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- GDPR Compliance Pane -->
+                        <div id="content-gdpr" class="policy-pane space-y-6 hidden">
+                            <h2 class="font-heading text-2xl sm:text-3xl font-bold text-text mb-4">GDPR Compliance</h2>
+                            <p class="text-xs text-text/40">Last Updated: July 4, 2026</p>
+                            <p>For individuals residing within the European Economic Area (EEA), Growth Nexus complies fully with the General Data Protection Regulation (GDPR) standards regarding the control and processing of personal data.</p>
+                            
+                            <h3 class="font-heading text-lg font-semibold text-text mt-6">1. Your Rights Under GDPR</h3>
+                            <p>As a data subject, you hold the following rights regarding the personal information we process:</p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Right of Access:</strong> You can request a digital copy of all personal details saved in our databases.</li>
+                                <li><strong>Right to Rectification:</strong> You can request corrections to inaccurate name, email, or phone records.</li>
+                                <li><strong>Right to Erasure ("Right to be Forgotten"):</strong> You can request the complete deletion of your records from our Google Sheets and local storage cache.</li>
+                                <li><strong>Right to Portability:</strong> You can request to export your dashboard log in a clean CSV format.</li>
+                            </ul>
+                            
+                            <h3 class="font-heading text-lg font-semibold text-text mt-6">2. Data Controller Contact</h3>
+                            <p>If you wish to exercise any of these rights, please send a data deletion or portability request to our privacy team at <code class="bg-white/5 px-2 py-0.5 rounded text-cyan">privacy@growthnexus.ai</code>. We will verify your identity and fulfill the request within 30 days.</p>
+                        </div>
+                        
+                        <!-- Security Pane -->
+                        <div id="content-security" class="policy-pane space-y-6 hidden">
+                            <h2 class="font-heading text-2xl sm:text-3xl font-bold text-text mb-4">Security Policy</h2>
+                            <p class="text-xs text-text/40">Last Updated: July 4, 2026</p>
+                            <p>At Growth Nexus, security is engineered into every component of our automation workflows. This document details the policies we use to keep user inputs and systems safe.</p>
+                            
+                            <h3 class="font-heading text-lg font-semibold text-text mt-6">1. End-to-End Encryption</h3>
+                            <p>All data exchanged between our site forms and the Google Sheets integration is transmitted using HTTPS TLS 1.3 encryption protocols. This prevents eavesdropping or interception of customer names, email addresses, or phone details during transmission.</p>
+                            
+                            <h3 class="font-heading text-lg font-semibold text-text mt-6">2. Authentication & Admin Security</h3>
+                            <p>The Leads Dashboard is secured behind an admin authorization lock requiring a custom security key. Authentication tokens are handled strictly within the browser's Session Storage, meaning once the browser tab is closed, access is automatically revoked to prevent unauthorized access on shared devices.</p>
+                            
+                            <h3 class="font-heading text-lg font-semibold text-text mt-6">3. Third-Party API Credentials</h3>
+                            <p>All Apps Script integrations connecting to external sheet servers or the Google Tasks API utilize secure, scoped OAuth 2.0 access credentials. Growth Nexus does not store or hardcode private Google password keys in plaintext.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8 mt-12 bg-primary/20 relative z-10" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:flex sm:justify-between sm:items-center">
+            <p class="text-xs text-text/30 font-body">&copy; 2025 Growth Nexus. All rights reserved.</p>
+            <p class="text-xs text-text/30 font-body mt-2 sm:mt-0">Growth Nexus — Custom IT Services & AI Automation.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching logic
+        function switchTab(tabId) {
+            // Hide all panes
+            document.querySelectorAll('.policy-pane').forEach(pane => {
+                pane.classList.add('hidden');
+            });
+            
+            // Deactivate all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show target pane
+            const targetPane = document.getElementById('content-' + tabId);
+            if (targetPane) {
+                targetPane.classList.remove('hidden');
+            }
+            
+            // Activate target button
+            const targetBtn = document.getElementById('tab-' + tabId);
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+            }
+            
+            // Update hash in URL
+            window.location.hash = tabId;
+        }
+        
+        // Read URL hash on load
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.substring(1);
+            const validTabs = ['privacy', 'terms', 'cookies', 'gdpr', 'security'];
+            
+            if (hash && validTabs.includes(hash)) {
+                switchTab(hash);
+            } else {
+                // Default to privacy tab
+                switchTab('privacy');
+            }
+            
+            // Initialize lucide icons
+            lucide.createIcons();
+        });
+    </script>
+
+    <!-- AGENTATION: Design feedback toolbar (Local dev only) -->
+    <script type="module">
+      if (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:') {
+        try {
+          const [{ default: React }, { createRoot }, { Agentation }] = await Promise.all([
+            import('https://esm.sh/react@18.3.1'),
+            import('https://esm.sh/react-dom@18.3.1/client'),
+            import('https://esm.sh/agentation@3?deps=react@18.3.1,react-dom@18.3.1'),
+          ]);
+          
+          const mount = document.createElement('div');
+          mount.id = 'agentation-mount';
+          document.body.appendChild(mount);
+          
+          createRoot(mount).render(React.createElement(Agentation, {
+            endpoint: "http://localhost:4747",
+            onSessionCreated: (sessionId) => {
+              console.log("Session started:", sessionId);
+            }
+          }));
+        } catch (e) {
+          console.warn('Agentation load failed:', e);
+        }
+      }
+    </script>
+</body>
+</html>
