@@ -677,32 +677,6 @@
         </div>
     </div>
 
-    <!-- Admin Login Modal -->
-    <div id="admin-login-modal" onclick="if(event.target===this)closeAdminLogin()">
-        <div class="glass rounded-3xl p-8 max-w-md w-full mx-4 relative border border-white/10">
-            <button onclick="closeAdminLogin()" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors" aria-label="Close">
-                <i data-lucide="x" class="w-5 h-5 text-text/50"></i>
-            </button>
-            <div class="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-5">
-                <i data-lucide="lock" class="w-6 h-6 text-accent"></i>
-            </div>
-            <h3 class="font-heading text-xl font-bold mb-2">Admin Authentication</h3>
-            <p class="text-text/50 text-xs font-body mb-6">Enter password to access the Leads Dashboard.</p>
-            <div class="space-y-4">
-                <div>
-                    <input type="password" id="admin-password-input" class="form-input" placeholder="Enter Admin Password" onkeydown="if(event.key==='Enter')verifyAdminPassword()">
-                </div>
-                <button onclick="verifyAdminPassword()" class="btn-primary w-full"><span>Unlock Dashboard</span></button>
-                <div id="login-error-msg" class="text-red-400 text-xs font-body text-center hidden">Incorrect password. Please try again.</div>
-            </div>
-        </div>
-    </div>
-
-    <button id="leads-access-btn" class="glass" style="display: none;" onclick="openLeadsDashboard()" aria-label="Open Leads Dashboard" title="Leads Dashboard (Ctrl+Shift+L)">
-        <i data-lucide="layout-dashboard" class="w-5 h-5 text-text/60"></i>
-        <div id="leads-badge" class="hidden">0</div>
-    </button>
-
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" role="navigation" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -1813,6 +1787,27 @@
                     scheduledTime: lead.scheduledTime || ''
                 })
             });
+            // 👇 YEH CODE YAHAN PASTE KARO
+    fetch("https://imteefy.duckdns.org/webhook/leads-alert", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            source: lead.source,
+            name: lead.name || '',
+            email: lead.email || '',
+            phone: lead.phone || '',
+            businessType: lead.businessType || '',
+            notes: lead.notes || lead.message || lead.type || '',
+            scheduledDate: lead.scheduledDate || '',
+            scheduledTime: lead.scheduledTime || ''
+        })
+    }).catch(err => console.error("n8n webhook failed:", err));
+
+} catch(err) {
+    console.warn('Lead saved locally but failed to sync to Google Sheets:', err);
+        }
         } catch(err) {
             console.warn('Lead saved locally but failed to sync to Google Sheets:', err);
         }
